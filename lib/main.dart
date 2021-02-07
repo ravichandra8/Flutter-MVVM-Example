@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_app/viewmodel/CompanyViewModel.dart';
+import 'package:flutter_app/widget/CompanyList.dart';
 import 'package:provider/provider.dart';
 
 void main() {
@@ -58,17 +59,25 @@ class _MyHomePageState extends State<MyHomePage> {
         title: Text(widget.title),
       ),
       body:_isLoading? Center(child: CircularProgressIndicator()):
-    Center(
-        child:Consumer<CompanyViewModel>(
-    builder: (context,mediaViewModel,child)
-        => Column(
-          mainAxisAlignment: MainAxisAlignment.center,
-          children: <Widget>[
-            Text(mediaViewModel.companyResponse.companies.length.toString()),
-          ],
-        ),
-        )
-    ),
+    // Center(
+    //     child:Consumer<CompanyViewModel>(
+    // builder: (context,companyViewModel,child)
+    //     => Expanded(
+    //       child: Column(
+    //         children: <Widget>[
+    //         ListView.builder(
+    //             itemCount: 20,
+    //             itemBuilder: (context,index) {
+    //             return ListTile(
+    //               title: Text("ravi"),
+    //             );
+    //         }),
+    //         ],
+    //       ),
+    //     ),
+    //     )
+    // ),
+      CompanyList()
     );
   }
 }
