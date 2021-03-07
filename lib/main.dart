@@ -49,6 +49,7 @@ class _MyHomePageState extends State<MyHomePage> {
             _isLoading = false;
       });
     });
+    Provider.of<CompanyViewModel>(context,listen: false).fetchPostsList();
     super.didChangeDependencies();
   }
 
